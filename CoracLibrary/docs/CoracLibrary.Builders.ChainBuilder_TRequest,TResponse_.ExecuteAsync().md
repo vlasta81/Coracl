@@ -3,7 +3,7 @@
 
 ## ChainBuilder<TRequest,TResponse>.ExecuteAsync() Method
 
-Executes the chain of handlers asynchronously.
+Executes the chain of handlers and command asynchronously.
 
 ```csharp
 public System.Threading.Tasks.Task<TResponse> ExecuteAsync();

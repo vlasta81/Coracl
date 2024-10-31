@@ -30,5 +30,5 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 | Methods | |
 | :--- | :--- |
-| [ExecuteAsync()](CoracLibrary.Builders.ChainBuilder_TRequest,TResponse_.ExecuteAsync().md 'CoracLibrary.Builders.ChainBuilder<TRequest,TResponse>.ExecuteAsync()') | Executes the chain of handlers asynchronously. |
+| [ExecuteAsync()](CoracLibrary.Builders.ChainBuilder_TRequest,TResponse_.ExecuteAsync().md 'CoracLibrary.Builders.ChainBuilder<TRequest,TResponse>.ExecuteAsync()') | Executes the chain of handlers and command asynchronously. |
 | [SetNext&lt;TChain&gt;()](CoracLibrary.Builders.ChainBuilder_TRequest,TResponse_.SetNext_TChain_().md 'CoracLibrary.Builders.ChainBuilder<TRequest,TResponse>.SetNext<TChain>()') | Sets the next handler in the chain. |
