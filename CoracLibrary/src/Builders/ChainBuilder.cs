@@ -51,7 +51,7 @@ namespace CoracLibrary.Builders
         }
 
         /// <summary>
-        /// Executes the chain of handlers asynchronously.
+        /// Executes the chain of handlers and command asynchronously.
         /// </summary>
         /// <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
         /// <exception cref="ChainExecutionException">Thrown when an error occurs during the execution of the chain.</exception>
