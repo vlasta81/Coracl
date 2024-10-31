@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoracLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:CoracLibrary.Abstractions.ChainHandler`2">
+            <summary>
+            Represents an abstract base class for a handler in a chain of responsibility pattern.
+            </summary>
+            <typeparam name="TRequest">The type of the request object.</typeparam>
+            <typeparam name="TResponse">The type of the response object.</typeparam>
+        </member>
+        <member name="M:CoracLibrary.Abstractions.ChainHandler`2.CoracLibrary#Contracts#IChainHandler{TRequest,TResponse}#SetNext(CoracLibrary.Contracts.IChainHandler{`0,`1})">
+            <summary>
+            Sets the next handler in the chain.
+            </summary>
+            <param name="nextHandler">The next handler to be set.</param>
+        </member>
+        <member name="M:CoracLibrary.Abstractions.ChainHandler`2.HandleAsync(`0)">
+            <summary>
+            Handles the request asynchronously. If the current handler cannot process the request,
+            it delegates the request to the next handler in the chain.
+            </summary>
+            <param name="request">The request object to be handled.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
+        </member>
+        <member name="T:CoracLibrary.Builders.ChainBuilder`2">
+            <summary>
+            A builder class for creating and executing a chain of responsibility pattern.
+            </summary>
+            <typeparam name="TRequest">The type of the request object.</typeparam>
+            <typeparam name="TResponse">The type of the response object.</typeparam>
+        </member>
+        <member name="M:CoracLibrary.Builders.ChainBuilder`2.#ctor(`0,System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CoracLibrary.Builders.ChainBuilder`2"/> class.
+            </summary>
+            <param name="request">The request object to be handled.</param>
+            <param name="serviceProvider">The service provider for resolving dependencies.</param>
+        </member>
+        <member name="M:CoracLibrary.Builders.ChainBuilder`2.SetNext``1">
+            <summary>
+            Sets the next handler in the chain.
+            </summary>
+            <typeparam name="TChain">The type of the next handler.</typeparam>
+            <returns>The current instance of <see cref="T:CoracLibrary.Builders.ChainBuilder`2"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when the handler is null.</exception>
+        </member>
+        <member name="M:CoracLibrary.Builders.ChainBuilder`2.ExecuteAsync">
+            <summary>
+            Executes the chain of handlers asynchronously.
+            </summary>
+            <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
+            <exception cref="T:CoracLibrary.Exceptions.ChainExecutionException">Thrown when an error occurs during the execution of the chain.</exception>
+            <remarks>
+            This method executes the chain of responsibility pattern. It processes the request through the chain of handlers.
+            If any handler in the chain returns a response, the process is terminated and the response is returned.
+            If the chain does not return any response, a command corresponding to the implementation of <see cref="T:CoracLibrary.Contracts.ICommandHandler`2"/> is executed.
+            The chain can also be interrupted by returning null from a handler, in which case the command is executed.
+            </remarks>
+        </member>
+        <member name="T:CoracLibrary.Contracts.IChainHandler`2">
+            <summary>
+            Defines a handler in a chain of responsibility pattern.
+            </summary>
+            <typeparam name="TRequest">The type of the request object.</typeparam>
+            <typeparam name="TResponse">The type of the response object.</typeparam>
+        </member>
+        <member name="M:CoracLibrary.Contracts.IChainHandler`2.SetNext(CoracLibrary.Contracts.IChainHandler{`0,`1})">
+            <summary>
+            Sets the next handler in the chain.
+            </summary>
+            <param name="nextHandler">The next handler to be set.</param>
+        </member>
+        <member name="M:CoracLibrary.Contracts.IChainHandler`2.HandleAsync(`0)">
+            <summary>
+            Handles the request asynchronously.
+            </summary>
+            <param name="request">The request object to be handled.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
+        </member>
+        <member name="T:CoracLibrary.Contracts.ICommandHandler`2">
+            <summary>
+            Interface for handling commands with a request and response.
+            </summary>
+            <typeparam name="TRequest">The type of the request object.</typeparam>
+            <typeparam name="TResponse">The type of the response object.</typeparam>
+        </member>
+        <member name="M:CoracLibrary.Contracts.ICommandHandler`2.ExecuteAsync(`0)">
+            <summary>
+            Executes the command asynchronously.
+            </summary>
+            <param name="request">The request object.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
+        </member>
+        <member name="T:CoracLibrary.Contracts.ICoracl">
+            <summary>
+            Interface for Coracl operations.
+            </summary>
+        </member>
+        <member name="M:CoracLibrary.Contracts.ICoracl.Delegate``2(``0)">
+            <summary>
+            Delegates a request to a chain of handlers.
+            </summary>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="request">The request to be processed.</param>
+            <returns>A ChainBuilder instance to configure the chain of handlers.</returns>
+        </member>
+        <member name="T:CoracLibrary.Coracl">
+            <summary>
+            Represents the main entry point for the Corac library.
+            </summary>
+        </member>
+        <member name="M:CoracLibrary.Coracl.#ctor(System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CoracLibrary.Coracl"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider to resolve dependencies.</param>
+        </member>
+        <member name="M:CoracLibrary.Coracl.Delegate``2(``0)">
+            <summary>
+            Creates a new chain builder for handling the specified request.
+            </summary>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="request">The request to be handled.</param>
+            <returns>A chain builder for handling the request.</returns>
+        </member>
+        <member name="T:CoracLibrary.Exceptions.ChainExecutionException">
+            <summary>
+            Represents errors that occur during the execution of a chain of operations.
+            </summary>
+        </member>
+        <member name="M:CoracLibrary.Exceptions.ChainExecutionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Represents errors that occur during the execution of a chain of operations.
+            </summary>
+        </member>
+        <member name="T:CoracLibrary.Extensions.CoraclExtensions">
+            <summary>
+            Provides extension methods for adding Coracl services to the IServiceCollection.
+            </summary>
+        </member>
+        <member name="M:CoracLibrary.Extensions.CoraclExtensions.AddCoracl(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)">
+            <summary>
+            Adds Coracl services to the specified IServiceCollection.
+            </summary>
+            <param name="services">The IServiceCollection to add services to.</param>
+            <param name="assembly">The assembly to scan for types implementing ICommandHandler and IChainHandler interfaces.</param>
+            <returns>The IServiceCollection with Coracl services added.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the services parameter is null.</exception>
+        </member>
+    </members>
+</doc>

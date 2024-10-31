@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>CoracLibrary</RootNamespace>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	</PropertyGroup>
+	
+	<PropertyGroup>		
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\CoracLibrary.xml</DocumentationFile>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<DefaultDocumentationFolder>docs</DefaultDocumentationFolder>
+		<DefaultDocumentationAssemblyPageName>CoracLibrary</DefaultDocumentationAssemblyPageName>
+		<DefaultDocumentationGeneratedAccessModifiers>Public,Protected,Internal</DefaultDocumentationGeneratedAccessModifiers>
+		<DefaultDocumentationGeneratedPages>Namespaces,Types,Members</DefaultDocumentationGeneratedPages>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="DefaultDocumentation" Version="0.8.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Compile Include="src/**/*.cs" />
+	</ItemGroup>
+	
+</Project>
