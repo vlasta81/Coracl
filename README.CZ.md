@@ -14,11 +14,11 @@ Jednoduchá .NET 8 knihovna implementující vzory *Chain of Responsibility* a *
 
 ## Stažení
 
-Aktuální knihovna ke stažení zde: **DOWNLOAD**.
+Aktuální knihovna ke stažení zde: **[DOWNLOAD](https://github.com/vlasta81/Coracl/releases 'https://github.com/vlasta81/Coracl/releases')**.
 
 ## Instalace
 
-Ve Visual Studiu přidejte referenci na dll knihovnu **CoracLibrary.dll**.
+Ve Visual Studiu přidejte referenci na dll knihovnu **CoracLibrary.dll** nebo si sestavte vlastní knihovnu.
 
 ## Použití
 

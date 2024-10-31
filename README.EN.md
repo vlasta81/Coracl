@@ -14,11 +14,11 @@ A simple .NET 8 library implementing the *Chain of Responsibility* and *Command*
 
 ## Download
 
-The current library can be downloaded here: **DOWNLOAD**.
+The current library can be downloaded here: **[DOWNLOAD](https://github.com/vlasta81/Coracl/releases 'https://github.com/vlasta81/Coracl/releases')**.
 
 ## Installation
 
-In Visual Studio, add a reference to the dll library **CoracLibrary.dll**.
+In Visual Studio, add a reference to the dll library **CoracLibrary.dll** or build your own.
 
 ## Usage
 
