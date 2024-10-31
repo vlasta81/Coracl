@@ -18,7 +18,7 @@ The current library can be downloaded here: **DOWNLOAD**.
 
 ## Installation
 
-In Visual Studio, add a reference to the dll library **blabla.dll**.
+In Visual Studio, add a reference to the dll library **CoracLibrary.dll**.
 
 ## Usage
 

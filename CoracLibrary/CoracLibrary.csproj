@@ -8,6 +8,17 @@
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 	</PropertyGroup>
 	
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<InformationalVersion>1.0.0</InformationalVersion>
+		<Authors>vlasta81</Authors>
+		<Company>vlasta81</Company>
+		<Description>A simple .NET 8 library implementing the Chain of Responsibility and Command patterns.</Description>
+		<RepositoryUrl>https://github.com/vlasta81/Coracl/</RepositoryUrl>
+	</PropertyGroup>
+	
 	<PropertyGroup>		
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\CoracLibrary.xml</DocumentationFile>

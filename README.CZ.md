@@ -18,7 +18,7 @@ Aktuální knihovna ke stažení zde: **DOWNLOAD**.
 
 ## Instalace
 
-Ve Visual Studiu přidejte referenci na dll knihovnu **blabla.dll**.
+Ve Visual Studiu přidejte referenci na dll knihovnu **CoracLibrary.dll**.
 
 ## Použití
 
