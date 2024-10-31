@@ -1,1 +1,3 @@
 # Coracl
+
+[ENGLISH](README.EN.md 'README.EN.md') | [CZECH](README.EN.md 'README.EN.md')
